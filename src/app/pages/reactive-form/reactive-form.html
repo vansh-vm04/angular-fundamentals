@@ -1,0 +1,19 @@
+<div>
+    <form [formGroup]="UserForm">
+        <input formControlName="username" type="text">
+        <input formControlName="password" type="text">
+        <input formControlName="email" type="text">
+        <select (change)="getDesignationById()" formControlName="dept" id="">
+            @for(item of departments; track $index){
+                <option [value]="item.departmentId">{{item.departmentName}}</option>
+            }
+        </select>
+        <select formControlName="desg" id="">
+            @for(item of designations; track $index){
+                <option [value]="item.designationId">{{item.designationName}}</option>
+            }
+        </select>
+        <button (click)="onSubmit()" class="btn btn-primary">Submit</button>
+        <span>{{showValue || ''}}</span>
+    </form>
+</div>
