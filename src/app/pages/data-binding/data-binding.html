@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-3">
+        Course : {{courseName}}
+    </div>
+    <div class="col-3">
+        Duration : {{duration}}
+    </div>
+    <div class="col-3">
+        Status : {{isSubscribed}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <input [class]="className" type="checkbox" [checked] = 'isSubscribed'>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button style="margin-left:20px;" class="btn btn-primary" (click) = 'showAlert()'>Show Alert</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-5">
+        <input type="text" name="course" [(ngModel)]="courseName" id="course"/>
+        <button>Change</button>
+    </div>
+</div>
+
+<div class="row">
+    <span>{{cityName}}</span>
+    <select name="City" [(ngModel)]="cityName" id="">
+        <option value="Jaipur">Jaipur</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Agra">Agra</option>
+    </select>
+</div>
+
+<!-- This is interpolation -->
