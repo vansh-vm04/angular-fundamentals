@@ -1,0 +1,21 @@
+<div class="row">
+    <span>{{result.message || 'hello'}}</span>
+    <form class="form row g-3" (ngSubmit)='createUser()'>
+        <input class="form-control" [(ngModel)]="user.username" type="text" name="username">
+        <input class="form-control" [(ngModel)]="user.email" type="text" name="email">
+        <input class="form-control" [(ngModel)]="user.password" type="text" name="password">
+        <select (change)="getDesignationById()" [(ngModel)]="selectedDpartmentId" style="margin-bottom: 200px;" name="departments" id="">
+            <option [ngValue]="null" disabled> Select department</option>
+            @for(item of departments; track $index){
+                <option [value]="item.departmentId">{{item.departmentName}}</option>
+            }
+        </select>
+        <select  style="margin-bottom: 200px;" name="departments" id="">
+            <option [value]="null" disabled>Select Designation</option>
+            @for(item of designation; track $index){
+                <option [value]="item.designationId">{{item.designationName}}</option>
+            }
+        </select>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
