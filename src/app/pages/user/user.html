@@ -1,0 +1,23 @@
+<div>
+    <span>{{Date | date:'dd-MMMM-yyyy'}}</span>
+    @if (userList.length>0) {
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+            @for (item of userList; track $index) {
+            <tr>
+                <td>{{item.name | uppercase}}</td>
+                <td>{{item.email | uppercase}}</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}@else {
+   <h2>Loading...</h2>
+}
+</div>
