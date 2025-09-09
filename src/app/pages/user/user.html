@@ -1,4 +1,9 @@
-<div>
+<div [ngStyle]="{'background-color':newClass}">
+    <ul>
+    @for(user of userService; track $index){
+        <li>{{user}}</li>
+    }
+    </ul>
     <span>{{Date | date:'dd-MMMM-yyyy'}}</span>
     @if (userList.length>0) {
 <table class="table table-bordered">
